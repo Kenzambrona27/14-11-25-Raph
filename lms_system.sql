@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 12, 2025 at 11:20 AM
+-- Generation Time: Nov 14, 2025 at 10:43 AM
 -- Server version: 10.4.32-MariaDB
--- PHP Version: 8.2.12
+-- PHP Version: 8.0.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -72,7 +72,27 @@ CREATE TABLE `announcements` (
 --
 
 INSERT INTO `announcements` (`announcement_id`, `subject_id`, `instructor_id`, `content`, `created_at`) VALUES
-(1, 11, 3, 'asd', '2025-11-12 18:13:45');
+(1, 11, 3, 'asd', '2025-11-12 18:13:45'),
+(2, 13, 1, 'sasasasd', '2025-11-14 14:34:48'),
+(3, 13, 1, 'asdadsa', '2025-11-14 14:36:05'),
+(4, 17, 1, 'sdadad', '2025-11-14 14:42:13'),
+(5, 15, 1, 'saasas', '2025-11-14 14:49:19'),
+(6, 15, 1, 'sasdasdsadasd', '2025-11-14 14:52:42'),
+(7, 15, 1, 'dsdadsa', '2025-11-14 14:55:38'),
+(11, 18, 1, 'dsdadsa', '2025-11-14 15:16:01'),
+(15, 15, 1, 'sdadad', '2025-11-14 16:20:50'),
+(18, 14, 1, 'asdsad', '2025-11-14 16:31:59'),
+(19, 14, 1, 'dsadsad', '2025-11-14 16:34:51'),
+(20, 20, 1, 'sadasdasd', '2025-11-14 16:43:44'),
+(22, 21, 1, 'sadsadsadssdsaddsadsadasdasdsadsdasd', '2025-11-14 16:44:43'),
+(23, 21, 1, 'Me', '2025-11-14 16:46:47'),
+(26, 21, 1, 'dsadadad', '2025-11-14 17:06:58'),
+(28, 14, 1, 'hey', '2025-11-14 17:19:07'),
+(29, 14, 1, 'pdf', '2025-11-14 17:19:20'),
+(30, 14, 1, 'nc', '2025-11-14 17:19:34'),
+(32, 14, 1, 'sdsada', '2025-11-14 17:25:09'),
+(33, 14, 1, 'fdsada', '2025-11-14 17:26:12'),
+(34, 14, 1, 'het', '2025-11-14 17:42:42');
 
 -- --------------------------------------------------------
 
@@ -122,6 +142,24 @@ CREATE TABLE `posting_teacher` (
   `file_size` bigint(20) UNSIGNED DEFAULT 0,
   `uploaded_at` datetime DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `posting_teacher`
+--
+
+INSERT INTO `posting_teacher` (`posting_id`, `announcement_id`, `asset_type`, `original_name`, `stored_name`, `file_path`, `mime_type`, `file_size`, `uploaded_at`) VALUES
+(1, 23, 'PHOTO_VIDEO', '1v1.jpg', '1763110007419-1v1.jpg', 'uploads/announcements/1763110007419-1v1.jpg', 'image/jpeg', 136681, '2025-11-14 16:46:47'),
+(4, 28, 'FILE', '1763110411519-WEEKLY_STATUS_REPORT_-_W8.docx', '1763111947767-1763110411519-WEEKLY_STATUS_REPORT_-_W8.docx', 'uploads/announcements/1763111947767-1763110411519-WEEKLY_STATUS_REPORT_-_W8.docx', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document', 76544, '2025-11-14 17:19:07'),
+(5, 29, 'FILE', 'PROPOSAL-ACCEPTANCE.pdf', '1763111960946-PROPOSAL-ACCEPTANCE.pdf', 'uploads/announcements/1763111960946-PROPOSAL-ACCEPTANCE.pdf', 'application/pdf', 155506, '2025-11-14 17:19:20'),
+(6, 30, 'PHOTO_VIDEO', 'Pierre.png', '1763111974537-Pierre.png', 'uploads/announcements/1763111974537-Pierre.png', 'image/png', 893096, '2025-11-14 17:19:34'),
+(8, 32, 'FILE', '1763110411519-WEEKLY_STATUS_REPORT_-_W8.docx', '1763112309283-1763110411519-WEEKLY_STATUS_REPORT_-_W8.docx', 'uploads/announcements/1763112309283-1763110411519-WEEKLY_STATUS_REPORT_-_W8.docx', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document', 76544, '2025-11-14 17:25:09'),
+(9, 32, 'FILE', '1763110411519-WEEKLY_STATUS_REPORT_-_W8 (1).docx', '1763112309284-1763110411519-WEEKLY_STATUS_REPORT_-_W8__1_.docx', 'uploads/announcements/1763112309284-1763110411519-WEEKLY_STATUS_REPORT_-_W8__1_.docx', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document', 76544, '2025-11-14 17:25:09'),
+(10, 32, 'FILE', 'WEEKLY STATUS REPORT - W4.pdf', '1763112309374-WEEKLY_STATUS_REPORT_-_W4.pdf', 'uploads/announcements/1763112309374-WEEKLY_STATUS_REPORT_-_W4.pdf', 'application/pdf', 153200, '2025-11-14 17:25:09'),
+(11, 32, 'FILE', 'CipherQuest_CipherNomads.pdf', '1763112309381-CipherQuest_CipherNomads.pdf', 'uploads/announcements/1763112309381-CipherQuest_CipherNomads.pdf', 'application/pdf', 4142518, '2025-11-14 17:25:09'),
+(12, 32, 'FILE', 'WEEKLY STATUS REPORT - W8.docx', '1763112309442-WEEKLY_STATUS_REPORT_-_W8.docx', 'uploads/announcements/1763112309442-WEEKLY_STATUS_REPORT_-_W8.docx', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document', 76544, '2025-11-14 17:25:09'),
+(13, 32, 'PHOTO_VIDEO', 'DSC_0218.JPG', '1763112309442-DSC_0218.JPG', 'uploads/announcements/1763112309442-DSC_0218.JPG', 'image/jpeg', 2527817, '2025-11-14 17:25:09'),
+(14, 33, 'FILE', 'Thesis-GradingForm.xlsx', '1763112372402-Thesis-GradingForm.xlsx', 'uploads/announcements/1763112372402-Thesis-GradingForm.xlsx', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet', 18549, '2025-11-14 17:26:12'),
+(15, 34, 'PHOTO_VIDEO', 'ZAYN - Dusk Till Dawn (Official Video) ft. Sia - ZaynVEVO (360p, h264).mp4', '1763113362046-ZAYN_-_Dusk_Till_Dawn__Official_Video__ft._Sia_-_ZaynVEVO__360p__h264_.mp4', 'uploads/announcements/1763113362046-ZAYN_-_Dusk_Till_Dawn__Official_Video__ft._Sia_-_ZaynVEVO__360p__h264_.mp4', 'video/mp4', 15119148, '2025-11-14 17:42:42');
 
 -- --------------------------------------------------------
 
@@ -178,9 +216,18 @@ CREATE TABLE `subjects` (
 --
 
 INSERT INTO `subjects` (`subject_id`, `instructor_id`, `title`, `description`, `class_code`, `created_at`, `is_archived`) VALUES
-(10, 1, 'Shobe', 'testing', 'Y0KMPVBQCS', '2025-11-12 00:38:56', 0),
+(10, 1, 'Shobe', 'testing', 'Y0KMPVBQCS', '2025-11-12 00:38:56', 1),
 (11, 3, 'Ivell', '123', 'V0MTQSAQ40', '2025-11-12 02:47:50', 0),
-(12, 3, 'Ivell', 'Testing', 'IHRSY5EY70', '2025-11-12 15:37:11', 0);
+(12, 3, 'Ivell', 'Testing', 'IHRSY5EY70', '2025-11-12 15:37:11', 0),
+(13, 1, 'Gecontwo', '1', '7KF2KNRKR0', '2025-11-14 01:21:39', 1),
+(14, 1, 'RKZ', '1223', 'ZHEEB404P4', '2025-11-14 01:22:49', 0),
+(15, 1, '11', '11', '17GYFG0ZM0', '2025-11-14 14:20:59', 0),
+(16, 1, 'Science', 'Gabas', 'P4G9SYXZLK', '2025-11-14 14:24:07', 0),
+(17, 1, 'Math', 'sadad', 'EKGS2W9GJH', '2025-11-14 14:42:03', 0),
+(18, 1, 'RKZ', 'dsadada', '5XO8POQQMS', '2025-11-14 15:15:38', 0),
+(19, 1, 'Kenneth', 'eweqeqeqw', 'N8SBDB86CH', '2025-11-14 15:18:22', 0),
+(20, 1, 'heyyy', '123', '4LMV855GYC', '2025-11-14 16:20:59', 0),
+(21, 1, 'seb', '123', 'FZV6BX40KW', '2025-11-14 16:44:29', 0);
 
 -- --------------------------------------------------------
 
@@ -328,7 +375,7 @@ ALTER TABLE `activity_items`
 -- AUTO_INCREMENT for table `announcements`
 --
 ALTER TABLE `announcements`
-  MODIFY `announcement_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `announcement_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 
 --
 -- AUTO_INCREMENT for table `files`
@@ -346,7 +393,7 @@ ALTER TABLE `notifications`
 -- AUTO_INCREMENT for table `posting_teacher`
 --
 ALTER TABLE `posting_teacher`
-  MODIFY `posting_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `posting_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `roles`
@@ -364,7 +411,7 @@ ALTER TABLE `student_subjects`
 -- AUTO_INCREMENT for table `subjects`
 --
 ALTER TABLE `subjects`
-  MODIFY `subject_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `subject_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT for table `submissions`
